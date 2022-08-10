@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  webui:
+    image: helloworld
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - "environment=Test"
+    volumes:
+      - ~/app/config:/app/config
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    restart: on-failure

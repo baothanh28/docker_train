@@ -1,0 +1,18 @@
+docker build -t [tenimage]:[v] .
+
+docker save helloworld:1.0 | gzip > newhelloworld.tar.gz
+
+docker save helloworld:1.0> newhelloworld.tar.gz
+
+
+docker load < newhelloworld.tar.gz
+
+ docker load --input fedora.tar
+
+
+docker push helloworld:1.0
+
+The push refers to repository [docker.io/library/helloworld]
+Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 192.168.65.5:53: read udp 192.168.65.4:49068->192.168.65.5:53: i/o timeout
+
+docker push baothanh28/helloworld:1.0
